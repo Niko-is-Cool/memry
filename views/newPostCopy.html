@@ -1,0 +1,125 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Create a new post</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> <!--DOPE-->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/styling.css">
+
+</head>
+
+<body id="newPostPage">
+
+
+{% if username %}
+
+<div id="menu">
+	<a href="/" id="home">Public</a> 
+
+	<span id="title">{{username}}</span>
+	<a href="/profile" id="profile">Profile</a> 
+</div>
+
+
+<!--
+{% if username %}
+Welcome {{username}}        <a href="/logout">Logout</a><p>
+{% else %}
+You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+{% endif %}
+-->
+<br>
+<br>
+<br>
+
+<form action="/newpost" method="POST" enctype="multipart/form-data">
+
+{{errors}}
+<h3>Enter New Memry</h3>
+<h3 id="titleHeader">Title</h3>
+<input id="newSubject" type="text" name="subject" size="120" onKeyPress="edValueKeyPress()" onKeyUp="edValueKeyPress()" value="{{subject}}"><br>
+
+<h3>Body<h3>
+
+<textarea id="newPostTextArea" name="body" cols="120" rows="20">{{body}}</textarea><br>
+
+
+<input type="submit" value="Submit">
+
+
+
+
+<h3>Images</h3>
+<input type="file" name="image" class="fileUpload">
+
+<h3>Tags</h3>
+Comma separated, please<br>
+<input id="newPostTagsArea" type="text" name="tags" size="120" value="{{tags}}"><br>
+
+
+<h3>Number of Sentences</h3>
+
+<form method="POST">
+1<input type="range" name="numberOfSentences" min="1" max="4" value="1">4
+</form>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--
+
+<form method="post" enctype="multipart/form-data" action="/file-upload">
+    <input type="file" name="image">
+    <input type="submit">
+</form>
+
+-->
+<!--<input id="titleOwner" type="text" name="own" value="{{own}}"><br>-->
+
+
+<!--	<div id = "postContent">
+	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</div>
+
+owner
+-->
+
+<div id="footMenu">
+	<a href="/logout" id="logout">Logout</a>
+	<a href="/newpost" id ="newPost" >Add Memry</a>
+</div>
+
+
+
+<div id="owner">{{owner}}</div>
+<div id="score">{{score}}</div>
+
+{% else %}
+	<div id= "notLoggedIn_page">
+		<h2>You are not logged in!</h2>   
+		<br> 
+		<br> 
+		<br> 
+		<a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+	</div>
+
+
+{% endif %}
+
+
+</body>
+
+<script src = "../js/jquery-1.10.2.min.js"></script>
+<script src = "../js/script.js"></script>
+
+</html>
+
+

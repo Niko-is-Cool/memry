@@ -1,0 +1,409 @@
+body, html{
+	margin: 0px;
+	padding: 0px;
+	background: white; 
+	font-family: "Optima"; 
+	font-size: 18px;
+	color: black;
+	height: 100%;
+}
+
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+h3{
+	//padding: 0px;
+	//margin: 0px;
+}
+
+#blog_template, #profile_page, #edit_page, #students_page, #newPostPage{
+	height: 120%;
+}
+
+#newPostPage form {	
+	margin: 0 7% 0 7%;
+}
+
+
+
+#previousButton, #nextButton{
+	color:black;
+}
+#links{
+}
+#menu {
+	text-align: center;
+	width: 100%;
+	top:0;
+	position:relative;
+	z-index:2;
+}
+#menu #home {
+	float: left;
+}
+#menu #title, #menu #originalPercent {
+	font-size: 18px;
+	color:white;
+	position: absolute;
+	padding: 3% 0 3% 0; 
+
+	width:200px;
+	left:50%;
+	margin-left:-100px;
+	position:absolute;
+	overflow:hidden;
+	text-align: center;
+	pointer-events:none;
+
+}
+
+#menu #profile {
+	float: right;
+}
+/*
+#originalPercent{
+	color:white;
+	position: fixed;
+	top: 10px; 
+	left: 50%;
+	text-align: center;
+	z-index:100;
+}
+*/
+
+
+#home, #profile{
+width: 50%;
+float: left;
+text-align: center;
+padding: 3% 0 3% 0; 
+background: #001327;
+color: white;
+}
+
+#footMenu{
+	background:#001327;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 3% 0 3% 0; 
+	text-align:center;
+	vertical-align:middle;
+	height: 4%;
+
+}
+
+#footMenu a{
+	color: white;
+}
+
+#newPost{
+position: fixed;
+width: 50%;
+left: 0;
+}
+
+#logout{
+position: fixed;
+width: 50%;
+right: 0;
+}
+
+
+
+
+
+
+
+#previous {
+	left: 0;
+	position: fixed; 
+	//top: 42%;
+	border: 1px solid black;
+	height: 100%;
+	width: 500%;
+	z-index: -1;
+
+}
+#next {
+	right: 0;
+	position: fixed; 
+	border: 1px solid black;
+	height: 100%;
+	width: 50%;
+	z-index: -1;
+}
+#prevImg{
+}
+#nextImg{
+}
+#previousButton{
+	float: left;
+	border: 1px solid red;
+}
+#nextButton{
+	float:right;
+	border: 1px solid red;
+}
+
+
+
+
+
+
+
+#buttons {
+	border: 1px solid black;
+	background-color: white;
+	position: fixed; 
+	bottom: 0;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	padding: 10px 0 10px 0; 
+	height: 40px;
+	z-index: 2;
+}
+#buttons #forgetThis{
+	border: 1px solid blue;
+	float: left;
+	height: 50px;
+
+}
+#buttons #remindMe{
+	border: 1px solid blue;
+	float:right;
+	height: 50px;
+}
+
+
+
+#forgetAll{
+	position: absolute;
+	bottom: 130px;
+	left: 0px;
+}
+/*
+#buttons #remindMe {
+	float:right;
+	width: 15%;
+	display: block;
+
+}#buttons #forgetThis {
+	float: left;
+	width: 15%;
+	display: block;
+}
+*/
+
+#buttons #followThis {
+	margin-left:43%;
+	width: 15%; 
+	display:none;
+	COLOR: BLACK;
+}
+#buttons #memorizeThis {
+	float: left;
+	width: 15%;
+	display:none;
+}
+
+
+
+
+.bottomMid {
+	position: absolute;
+	//bottom: 0;
+	width: 44%;
+	left: 50%;
+	text-align: center;
+	margin-left: -22%;
+	padding:0;
+
+}
+#answerBox{
+	border: 1px solid black;
+	font-size: 24px;
+	height: 40px;
+	overflow: hidden;
+}
+
+
+
+#canvas{	
+
+	margin: auto;  
+	position: absolute;
+	left:0;
+	right: 0;
+	top: 0;
+	bottom: 0; 
+
+	z-index:1; 
+}
+
+#content, #contentStranger{
+	background-color:white;
+	font-size: 24px;
+	margin: 0 auto;
+	padding-top:25px;
+	width: 75%;
+	padding: 20px 15px 50px 15px;
+	height: 100%;
+	position:relative;
+	z-index:1; 
+
+	white-space:pre-wrap;
+	visibility: hidden;
+	
+	border: 1px solid black;
+	color: black;
+}
+
+
+
+#contentStranger {
+	border: 1px solid green;
+}
+
+#hidden {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+#memories{
+	height: 300px;
+}
+.memry{
+	background:white;
+	//background-color:#131313;
+	height: 77px;
+	float:left;
+	text-align: left;
+	padding: 10px 0px 0px 15px;
+	border-bottom: 1px solid black;
+	width:90%;
+	margin-left:3%;
+	color:black;
+	text-align: center;
+}
+
+.title{
+}
+.grades{
+	float:left;
+	margin-right:30px;
+}
+
+#sideButtons{
+	margin-right: 5%;
+
+}
+
+.studentsLink{
+	color: red;
+	float: right;
+	margin-top: -80px;
+
+}
+.editLink{
+	color: blue;
+	float: right;
+	margin-top: -40px;
+
+
+}
+
+
+
+
+#tfnewsearch{
+text-align:center;
+//background: #199ed5;
+}
+
+#tfnewsearch .tftextinput{
+width: 40%;
+height: 20px;
+float: left;
+margin: 5px;
+}
+
+#tfnewsearch .tfbutton{
+border: 1px solid white;
+color: white;
+float: left;
+background: black;
+border: 0;
+margin: 5px;
+font-size: 14px;
+width: 10%;
+
+}
+
+
+
+#new{
+z-index: 10;
+float:right;
+padding: 5px;
+font-size: 14px;
+width: 15%;
+text-align: center;
+color: black;
+
+}
+
+#top{
+z-index: 10;
+float:right;
+padding: 5px;
+font-size: 14px;
+width: 15%;
+text-align: center;
+border-left: 1px solid black;
+border-right: 1px solid black;
+color: black;
+
+}
+
+
+
+
+
+
+
+
+#newSubject, #newPostTextArea, #newPostTagsArea{
+	width:98%;
+}
+
+
+#newPostPage #owner, #newPostPage #score{
+	display:none;
+}
+
+
+#notLoggedIn_page{
+	text-align:center;
+}
+
+#notLoggedIn_page a{
+	position:static;
+	border: 1px solid blue;
+	padding: 40px;
+}
+
+
+

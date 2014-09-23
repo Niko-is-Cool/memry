@@ -1,0 +1,894 @@
+///DISCARDED CODE 
+
+
+
+
+app.js 
+
+//app.use(express.bodyParser()); depricated
+
+
+posts.js
+
+		/// fix up the permalink to not include whitespace.")
+//		var permalink = title.replace( /\s/g, '_' );
+//		permalink = permalink.replace( /\W/g, '' )+'_'+Math.floor(Math.random() * 100)*Date.now();
+	
+
+
+		console.log('deleteSubject '+title+username);
+		console.log('detel entire post '+permalink)
+
+/*
+    this.getPostsByRemembered = function(num, callback) {
+        "use strict";
+
+//        posts.find().sort('date', 1).limit(num).toArray(function(err, items) {
+        posts.find({'class_number':0}).sort({'grade': -1}).limit(num).toArray(function(err, items) {
+            "use strict";
+            if (err) return callback(err, null);
+            console.log("Found " + items.length + " posts");
+            callback(err, items);
+        });
+    }
+
+
+
+    this.getProfilePostsByRemembered = function(num, user, callback) {
+        "use strict";
+
+        posts.find({'student':user , 'class_number':0}).sort({'grade': -1}).limit(num).toArray(function(err, items) {
+            "use strict";
+            if (err) return callback(err, null);
+            console.log("Found " + items.length + " posts");
+            callback(err, items);
+        });
+    }
+
+
+	this.getTopRemembered = function(num, req, page, callback){
+		"use strict"
+		console.log(' ');
+		console.log(' ');
+		console.log(' ');
+
+		console.log(req);
+		console.log(page);
+
+	
+//		if(yadada{ query = blah blha
+		if(page == "main"){
+			var query = {'class_number':0};
+		}else if(page == "profile"){
+			var query = {'student':req.username , 'class_number':0};
+		}else if(page == "edit"){
+			var query = {'title':req.title}
+		}else if(page == "students"){
+			var query = {'title':req.title}
+		} else { return('ahhh'); }
+
+
+		//{ 'original':'yes', 'class_number':0, 'students': { '$ne':user } }
+
+		posts.find(query).sort({'grade': -1}).limit(num).toArray(function(err, items) {
+		    "use strict";
+		    if (err) return callback(err, null);
+		    console.log("Founded " + items.length + " posts");
+		    callback(err, items);
+		});
+		
+	}
+*/
+
+
+
+	/*	posts.find({'title':post.title, 'body': { '$ne':post.body }}).sort('created', -1).limit(10).toArray(function(err, items) { 
+			"use strict";
+		        if (err) return callback(err, null);
+		        console.log("OMG Found " + items.length + " posts");
+	
+	            callback(err, post, items);
+		});
+	*/
+		console.log('user '+req.username); 
+
+
+	//find this permalink 
+
+			//var words = post.words;		//problem with empty db 
+			//post.words = JSON.stringify(words); 	
+
+
+/*	this.incRemindWords = function(permalink, obj, callback){
+
+		console.log('wordsStrength');
+		console.log(obj);
+
+		var words = obj.words;
+		var query = { 'permalink':permalink }; 
+		var operator = { '$set' : { 'words':words },  '$inc':{'rem':1}  };
+		var options = { 'upsert' : true } //, 'multi' : true}; 
+
+		posts.update(query, operator, options, function(err, numModified) {
+			"use strict";
+			if (err) return callback(err, null); 
+			callback(err, numModified); 
+		}); 
+	
+	}
+*/
+
+
+
+
+/*	this.incRemindImage = function(permalink, obj, callback){
+		"use strict"
+	
+		var image_strength = obj.image_strength;
+		var date = obj.date;
+
+		var query = { 'permalink':permalink }; 
+		var operator = { '$set':{ 'image_strength':image_strength , 'date':date }, '$push':{ 'reminded':Date.now() }, '$inc':{'rem':1} };
+	
+		posts.update(query, operator, function(err, numModified) {
+			"use strict";
+			if (err) return callback(err, null); 
+			callback(err, numModified); 
+		}); 
+
+	}
+
+*/
+
+
+
+
+//Users.js 
+
+
+/*
+	this.getTitles = function(username, callback){ 
+		"use strict"
+		if(username){	//PROBLEM WITH NO USERS
+			users.findOne({ '_id':username }, function (err, dude){
+				"use strict";
+				if (err) return callback(err, null);
+			
+				//var titles = dude.owner;
+				var titles = dude.teacher;
+
+				//console.log('users.js got title '+titles);
+
+				return callback(err, dude);
+			});
+		}
+		
+	}
+*/
+
+
+
+
+//Script.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//function removeId(){//Remove span when I click on it.   
+//	$('.w_o_r_d_s').click(function() { $(this).remove(); doneTyping(); }); //postAll(); });					//console.log('removeId called');
+//}
+
+/*
+window.onresize = function() { 
+	windowSize(); 
+	location.reload(); 
+	}
+*/
+
+/*
+function localStrength() { //THIS LOOKS WRONG
+	var t=0;
+	for( s=0; s<allObj.length; s++ ){
+		t = t + parseInt(allObj[s].strength); 
+		//console.log(allObj[s].strength);
+	}
+	if( isFinite(t) ) {
+		 u = nFormatter(t);
+	} else { u = "INFINITY"; }
+	$('#localStrength').text(u+' points'); 
+	return t; 
+}
+*/
+
+/*	var avgDiff = 0; 	
+	var v = 100;
+	var w = 5;
+	var x = 1;
+	var y = 2;
+	var z = 0;//Causing infinity and beyond 
+	var G = 0; 
+
+	for( d=0; d<dates.length-1; d++ ){
+		var dif = dates[d+1] - dates[d]; 
+		avgDiff += dif;		 									//console.log('avgDiff '+avgDiff+' dif '+dif);
+	}
+	avgDiff = avgDiff / (dates.length); 									//console.log('avgDiff '+avgDiff);	
+
+	//var lettersLeft = 3;//( $('#'+word).text().replace(/\s+/g, '').length )/word.length;			//console.log('lettersLeft '+lettersLeft);
+	//var groupings = grouping(word, newWords, original);							//console.log(groupings + ' groupings | word '+ word); 	
+	//var strength = 10000; //(v / lettersLeft) + (w * groupings) + (x * past) + (y * dates.length) - (z * avgDiff) + G;//console.log(  (v / lettersLeft) + (w * groupings) + (x * past) + (y * dates.length) + (z * avgDiff) + G );
+*/
+
+/*$(document).unbind('keydown').bind('keydown', function (event) {// Prevent the backspace key from navigating back.
+    var doPrevent = false;
+    if (event.keyCode === 8) {
+        var d = event.srcElement || event.target;
+        if ((d.tagName.toUpperCase() === 'INPUT' && (d.type.toUpperCase() === 'TEXT' || d.type.toUpperCase() === 'PASSWORD' || d.type.toUpperCase() === 'FILE')) 
+             || d.tagName.toUpperCase() === 'TEXTAREA') {
+            doPrevent = d.readOnly || d.disabled;
+        }
+        else {
+            doPrevent = true;
+        }
+    }
+    if (doPrevent) {
+        event.preventDefault();
+    }
+}); */
+
+
+
+
+/*
+function checkSpans(){ //checkSpans too see if its being typed into and cleans it	
+
+	$('.w_o_r_d_s').each(function(){
+		var _text = $(this).text().replace(/[^a-zA-Z ]/g, "_");
+		if(this.id != _text){
+			$(this).replaceWith($(this).text());
+		}
+	});
+	newlyTyped(); 
+}*/
+
+
+
+/*
+function newlyTyped() { //Looks through non-spans and adds them to newWords array
+	var newWords = []; 
+	$('#content').contents().each(function(){
+   		 if (this.nodeType === 3 && (/\S/.test(this.nodeValue))){	
+			newWords.push(this.nodeValue);
+		}
+	});
+	var newWords = newWords.join('').split(' ');
+	
+	update( newWords, 'edit' );										//console.log('newWords '+ newWords + ' trim ' +newWords.trim());
+}
+*/
+/*
+function refillAllSpans() { //Replaces spans with id 
+	var spans = document.getElementsByTagName( "span" );
+	var spans_Arr = [];
+	for( f=0; f<spans.length; f++ ){
+		var identify = spans[f].id;	
+		if( identify != 'status' ) {
+			spans_Arr.push( identify );
+		}
+	}
+	return spans_Arr.join(' ');
+} */
+
+
+
+
+
+
+
+/*
+function grouping(word, newWords, original){//Checks to see how many words are written in sequential order.  
+
+	var index = newWords.indexOf(word);	
+	var indexTwo = original.indexOf(word);
+	var i = 0;
+	var j = 0;
+	while ( newWords[index+i] == original[indexTwo+i] ){
+		if(  newWords[index+i] == undefined || original[indexTwo+i] == undefined ){break;} 
+		i++; 		} 
+	while ( newWords[index-j] == original[indexTwo-j] ){
+		if(  newWords[index-j] == undefined || original[indexTwo-j] == undefined ){break;} 
+		j++;
+	} 
+	var k = i + j - 1;
+	return k;
+}
+*/
+
+
+/*
+function replaceThe( word, date, strength ){		
+
+	classId = word.replace(/[^a-zA-Z ]/g, "_");
+
+	var copy = $(document.getElementById(classId)).text(); 							
+	if ( copy == word || copy.length == 0 ){ 
+		var replacement = addId(word, word); 							
+	} else {
+		var replacement = ''; 							
+		$(document.getElementsByClassName(classId)).text(word);		
+	}
+	$('#content').contents().each(function(){
+   		if (this.nodeType === 3 && (/\S/.test(this.nodeValue))){	  	
+			$(this).replaceWith(this.nodeValue.replace( word, replacement ));			console.log('this :' +this+ ' word: '+word+' replacedWith: '+replacement+ ' this.nodeValue: '+this.nodeValue);
+		}
+	});
+	forget( word, date, strength ); //Forgets the word if it already has existed. 
+}
+*/
+
+/*
+function brandNew( word, date, strength ) {
+
+	var spanny = addId(word, word); 
+	console.log('bRand new '+spanny);
+										
+	$('#content').contents().each(function(){
+   	 	if (this.nodeType === 3 && (/\S/.test(this.nodeValue))){	  	
+			$(this).replaceWith(this.nodeValue.replace(word, spanny ))
+		}
+	});
+	//pop saveButton() 
+	//post brandNew words() 
+	forget( word, date, strength ); //Forgets brand new words.  
+} 
+*/
+
+
+
+
+	//resized = calculateAspectRatioFit(_img.width, _img.height, $( window ).width(), $( window ).height());
+	//document.getElementById('canvas').style.width = resized.width + 'px';
+
+
+
+
+
+
+
+
+
+
+/*var clientInfo = {
+  browserWidth: $(window).width(),
+  browserHeight: $(window).height(),
+ };
+
+document.cookie = "_clientInfo=" + JSON.stringify(clientInfo) + " expires=Thu, 01 Jan 1970 00:00:00 GMT";
+*/
+/*
+
+
+
+
+
+
+
+/*
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+/*
+
+
+
+
+
+*/
+
+
+
+
+
+/*
+//on keyup, start the countdown
+$('#content').keyup(function(){
+    clearTimeout(typingTimer);
+    if ($('#content').html) {
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+    }
+});
+
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+
+function getCaret(el) {
+    return el.selectionStart;
+  }
+
+window.onload = function () {
+  var textarea = document.getElementById('content'),
+      status = document.getElementById('status');
+  
+	console.log(status);
+
+  textarea.onmouseup = textarea.onkeyup = function () {
+    status.innerHTML = getCaret(textarea);
+  };
+};
+
+
+
+
+/*
+var t = '';
+function gText(e) {
+	t = (document.all) ? document.selection.createRange().text : document.getSelection();
+	//document.getElementById('wordBeforeCursor').value = t;
+	y = t.toString();
+	y = y.length;
+
+}
+
+document.onmouseup = gText;
+if (!document.all) document.addEventListener(Event.MOUSEUP);
+
+
+
+/*
+
+in forget->
+		//setTimes( word, t, f, z[f] );  	
+
+
+	//for( e=0; e<word.length; e++ ){	//Clears timeouts on 'word'						console.log(timeoutIds[word+'_timeout_'+e]); 
+	//	clearTimeout( timeoutIds[word+'_timeout_'+e] ); 					
+	//}
+
+function setTimes( word, t, f, z ){
+	var e = "#"+word;
+	timeoutIds[word+'_timeout_'+f] = setTimeout( function() { hideLetter( e, z, word ); }, t);  //hideLetter('p', 2); takeLetter( word, t ); 
+		//console.log(word +' set '+timeoutIds[word+'_timeout_'+f]);  
+}
+
+function takeLetter( word, t ) { 										//console.log('takeLetter from '+word+ ' t ' +t); 
+	var letters = $(document.getElementById(word)).text().split(''); 					//console.log("letters "+letters+ " letters length "+letters.length+ " word length "+word.length); 
+	for( n=letters.length-1; n>=0; n-- ){
+		if (letters[n] != ' '){										//console.log(n + ' ' +letters[n]);
+			letters[n] = ' ';
+			var newWord = letters.join(''); 							//console.log("letters after  "+letters); 
+			$(document.getElementsByClassName(word)).text(newWord);
+			return;
+		}
+	}
+}
+*/
+
+/*
+function escapeHtml(unsafe) { //WHERE DO I PUT THIS SHIT? 
+    return $('<div />').text(unsafe).html()
+}
+
+function unescapeHtml(safe) {
+    return $('<div />').html(safe).text();
+}
+
+var a = escapeHtml("<p> yo & yo squirrl's </p>");
+var b = unescapeHtml(a);
+console.log(a);
+console.log(b);
+*/
+
+
+
+
+
+
+
+/*
+function onImage(e){
+    _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY)
+    _pieceHeight = Math.floor(_img.height / PUZZLE_DIFFICULTY)
+    _puzzleWidth = _pieceWidth * PUZZLE_DIFFICULTY;
+    _puzzleHeight = _pieceHeight * PUZZLE_DIFFICULTY;
+    setCanvas();
+    initPuzzle();
+	console.log(_img.width +"w"); 
+}
+
+*/
+
+
+
+
+
+
+
+
+
+/*
+function calcStrength() {
+
+	var GLOBAL_SKILL=1;
+	
+	var created =  $('#created').text();
+
+	console.log('created ' + created); console.log('now ' + Date.now()); 
+	
+	var past = parseInt(Date.now()) - parseInt(created); 
+	var ebbinghaus = -past/Math.log(.99); 
+	//var strength = ( ebbinghaus*x )+( PUZZLE_DIFFICULTY*y );
+	var strength = ebbinghaus * (PUZZLE_DIFFICULTY * GLOBAL_SKILL); 
+	console.log('strength '+strength);
+	
+	return strength; 
+} 
+
+
+window.onbeforeunload = finishedPuzzle;
+
+function finishedPuzzle() {
+
+	if(finishedPuzzle == false){
+    	//	return "you failed!"
+
+
+	}
+}
+
+
+
+/*
+function strengthenImage() {
+	var s =	-past/Math.log(.99);
+	_imageStrength = parseInt($('#imageStrength').text()); 
+	_imageStrength = PUZZLE_DIFFICULTY * _imageStrength;	
+	$.post(document.URL + '/image', {'image_strength' : _imageStrength});
+//	forgetImage();//This has pass image strength and restart the forgettin process.  		
+//	location.reload(); goes too fast 
+} 
+*/
+
+
+/*
+
+
+timeoutIds[word+'_timeout_'+f] 
+
+
+var id = window.setTimeout(function() {}, 0);
+
+while (id--) {
+    window.clearTimeout(id); // will do nothing if no timeout with id is present
+}
+
+	var strength = 10000; 
+	var time = 5000; 
+	var R = Math.pow(Math.E, (-time/strength));	
+	console.log(R);
+	PUZZLE_DIFFICULTY = Math.floor((1 - R) * 10); 
+
+
+
+
+	for( f=0; f<word.length; f++ ) {														
+		var R = f/word.length;
+		R = Math.max(R, 0.07); 
+		var t = -strength * Math.log( R );								//console.log('t '+t);
+		t = t + newestDate - Date.now(); 
+		t = Math.max(Math.min(t, 2147483646), 0); 							//console.log('t '+t+ ' word '+word);
+		
+		fadeLetter( word, t, f, z[f] );  
+	}
+*/
+
+
+
+
+
+
+/*
+function scoreBoard(){	///scoreBoard adds and post points.")
+
+	var score = parseInt($('#score').text()) + 5;
+	$('#score').text(score);  		
+	return score;
+}
+*/
+
+
+/*$( "#memories" ).sortable();
+		
+$('#memories').mouseup(function() {
+	console.log('up '+document.URL + '/saveEdit');
+                var neworder = new Array();
+*/
+
+
+
+	//var n = $('.memry').attr('name');
+	//console.log('clil '+ n);	
+
+
+
+
+
+/*
+$('#previousButton').click(function(){
+	var arr = document.URL.split('_');
+	var lastNum = parseInt(arr.pop()) - 1;
+	var newURL = arr.join('_')+'_'+lastNum;
+
+	if(permExists(newURL)){
+		window.location.href = arr.join('_')+'_'+lastNum;
+	} else { 
+		alert('nope');
+	}
+	});
+$('#nextButton').click(function(){
+	var arr = document.URL.split('_');
+	var lastNum = parseInt(arr.pop()) + 1;
+	var newURL = arr.join('_')+'_'+lastNum;
+
+	if(permExists(newURL)){
+		window.location.href = arr.join('_')+'_'+lastNum;
+	} else { 
+		alert('nope');
+	}
+	});
+
+function permExists (newURL) {
+		console.log(newURL);
+		$.ajax({
+		    type: 'HEAD',
+		    url: newURL,
+		success: function() {
+			console.log(newURL);
+
+			return true;
+		},
+		error: function() {
+			return false;
+		}
+		});
+	}
+
+*/
+
+
+	//console.log(x);
+	//console.log(y);
+	//console.log(1 - x/y);
+
+	//$('#answerBox').focus();
+
+/*$('#answerBox').focus(function(){
+	window.scrollTo(0, 0);
+	$('#menu').css({'position':'absolute', 'top':'0'})  
+
+});
+
+$('#answerBox').blur(function(){
+	$('#menu').css({'position':'fixed', 'top':'0' })  
+})
+*/
+
+
+/*
+if(detectmob()){  //If device on input focus move input to top. 
+	$('#answerBox').focus(function(){
+	
+	  
+		window.scrollTo(0, 0);
+		//var aboveKeys = window.innerHeight - $('#buttons').height() + 'px'  Doesn't work with iphone
+		$('#buttons').css({'position':'absolute', 'border':'1px solid red', 'top':'0', 'bottom':'' })  
+
+		var buttonsHeight = $('#buttons').height();	
+		$('#content').css({'position':'absolute', 'top':buttonsHeight, 'bottom':'' })
+	})
+	$('#answerBox').blur(function(){
+		$('#buttons').css({'position':'fixed', 'border':'1px solid blue', 'bottom':0, 'top':'' })  
+		$('#content').css({'position':'absolute', 'top':'100px'} )
+
+	})
+}
+
+
+*/
+
+
+
+
+//Content.js
+
+
+
+
+
+/*        var post = req.body.body        
+	 .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+
+*/
+
+
+//replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+
+
+/*
+    this.remindPost = function(req, res, next) {	
+	"use strict"; 
+	var permalink = req.params.permalink;
+ 	var obj = req.body;
+
+	posts.resetEntirePost(permalink, obj, function(err, post) {
+	       "use strict" 
+            if (err) return next(err);
+            if (!post) return res.redirect("/post_has_not_been_found");
+       	    return res.redirect("/post/"+permalink);
+	  }); 
+
+
+
+    }
+
+*/
+
+
+//"/post/remember/:permalink"
+
+
+/*
+    this.rememberPost = function(req, res, next) {
+	"use strict";
+
+	console.log('HAHAHAHAHHAHAAHHAHHAAHAH');
+	console.log('HAHAHAHAHHAHAAHHAHHAAHAH');
+	//title, image_path, username, callback
+	
+	var permalink = req.params.permalink; 
+        posts.findOne({'permalink': permalink}, function(err, post) {
+		if (err) return callback(err, null);
+	
+		console.log(post); 		
+		console.log('image path');
+		console.log(post.image_path); 		
+		
+		
+            	callback(err, post);
+	});
+
+	console.log('AHAHAHAHAHHAHAAHHAHHAAHAH');
+	console.log('AHAHAHAHAHHAHAAHHAHHAAHAH');
+	
+	posts.insertImage(title, image_path, username, callback, function(err, post) {
+	       "use strict" 
+            if (err) return next(err);
+            if (!post) return res.redirect("/post_has_not_been_found");
+       	    return res.redirect("/");
+	  });
+    }
+*/
+
+//if URL has /rmember 
+	/*
+
+	var url_parts = url.replace(/\/\s*$/,'').split('/'); //get rid of the trailing / before doing a simple split on /
+	console.log(url_parts); 
+	if (url_parts[url_pars.length-1] == "remember"){
+		return res.redirect("../");
+	} 
+	*/
+
+
+
+		
+		//BREAKING PROCESS 
+		/*
+		if(post){//Run if post isn't empty 
+
+
+			//var escaped_post = sanitize(post).escape();// looks like a good entry, insert it escaped
+			var escaped_post = post; 
+
+			// substitute some <br> for the paragraph breaks
+			//var formatted_post = escaped_post.replace(/([^.!?]*[^.!?\s][.!?]['"]?)(\s|$)/g, '<span>$1<span>$2<SENTENCE_END>');//.replace(/\r?\n/g,'<br>');
+			console.log('escaped_post');
+			console.log(escaped_post);
+					
+
+			var break_post = escaped_post.replace(/\r?\n/g,' <br> ').split(' ');
+		//	var break_post = escaped_post.split(' ');
+
+			console.log(break_post);
+			console.log('break_post');
+
+
+			var x = 15;//Pick how many words I want before I start the breaking process 
+			
+			for( var w=0; w<break_post.length; w++ ){//The breaking process 
+
+				if( w > 2 * x ) {
+					break_post[w] = '<m_e_m_r_y>';
+					x = w + x;
+				} else if( w > .5 * x + x ) {
+					var  v = break_post[w][break_post[w].length - 1]; 
+					if ( break_post[w] == '<br>' || v == '.' || v == '!' || v == '?' ){
+						break_post[w] = break_post[w] + ' <m_e_m_r_y>';
+						x = w + x;
+					}
+				} else if( w > x ){
+					if ( break_post[w] == '<br>' ){
+						break_post[w] = break_post[w] + ' <m_e_m_r_y>';
+						x = w + x;
+					}
+				}
+			}
+			var break_Arr = break_post.join(' ').split('<m_e_m_r_y>');
+
+			*/
+
+
+/*	this.remindImage = function(req, res, next){
+			
+		var permalink = req.params.permalink; 
+		var obj = req.body;
+		posts.incRemindImage(permalink, obj, function(err, post) {
+		       "use strict" 
+        	    if (err) return next(err);
+	            if (!post) return res.redirect("/post_has_not_been_found");
+		});
+	}
+
+*/
+
+
+/*	this.displayScore = function(req, res, next){//set the user's top score to the variable newScore
+
+		if(req.username){ //checks if user is loggedIn/exists	
+			users.getScore(req.username, function (err, score){
+				"use strict";
+				if(err) return next(err);
+				newScore = score;
+			});
+		}
+		next();
+	}
+*/
+
+
+

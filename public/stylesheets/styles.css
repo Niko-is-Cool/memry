@@ -1,0 +1,351 @@
+
+body, html {
+
+//	height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+background-color: #199ed5;
+margin: 0px;
+
+}
+
+#logo{
+color:white;
+font-size:14px;
+text-align: center;
+}
+
+
+#home{
+	position:absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#profile{
+	position:absolute;
+	top: 0px;
+	right: 0px;
+
+}
+
+
+#title{
+color:#222;
+text-align: center;
+border: 1px solid #ddd;
+font-size: 26px;
+padding: 5px;
+background-color: #eee;
+font-size: 100% 
+
+}
+
+
+#postDate{
+	text-align:center;
+	color: #222;
+	border: 1px solid #ddd;
+	font-size: 11px;
+	padding: 5px;
+	background-color: #eee;
+	
+
+}
+
+    #test input {
+      font-size: 12px;
+      color: pink;
+	padding: 0;
+	margin: 0;
+    }
+	
+	#test {
+	border: 1px solid red;
+	padding: 0;
+	margin: 0;
+
+}
+
+.gsc-control-cse.gsc-control-cse-en {
+
+padding:0;
+border: 1px solid red;
+
+}
+
+.gs-title, .gs-snippet {
+font-family: courier;
+}
+
+    
+input#gsc-i-id1.gsc-input {
+	
+}
+
+#gs_tti50.gsib_a {
+border: 1px solid yellow;
+width: 100px;
+text-decoration:none;
+}
+
+
+	#tfheader{
+		background-color:#c3dfef;
+	}
+	#tfnewsearch{
+		float:right;
+		padding:20px;
+	}
+	.tftextinput{
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.tfbutton {
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.tfbutton:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.tfbutton::-moz-focus-inner {
+	  border: 0;
+	}
+	.tfclear{
+		clear:both;
+	}
+
+
+
+
+#remindMe{
+	position:fixed;
+	color:lightgreen;
+	right: 0px;
+	bottom: 0px;
+	z-index: 10;
+}
+
+#forgetThis{
+	position:fixed;
+	color:orange;
+	left: 0px;
+	bottom: 0px;
+	z-index: 10;
+}
+
+#rememberThis{
+	position:fixed;
+	color:lightgreen;
+	right: 0px;
+	bottom: 0px;	
+}
+
+#blackBox{
+	position:fixed;
+	color:orange;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+#canvas{
+    border: 1px solid red;
+
+}
+#imageContent{
+
+
+}
+
+
+
+
+
+
+
+
+#tags{
+	margin-top: 100px;
+	margin-bottom: 1px;
+}
+a {
+	color:lightblue;
+	font-size:44px;	
+	background-color: #222;
+	padding: 10px;
+	text-decoration: none;
+	border: 1px solid black;
+	text-align: center;
+	width: 50%;
+	font-size: 100% 
+
+
+        //@media all {html {font-size: 24px;}}@media all and (max-width:2200px){html {font-size: 27px;}}@media all and (max-width:1800px){html {font-size: 26px;}}@media all and (max-width:1400px){html {font-size: 25px;}}@media all and (max-width:1000px){html {font-size: 24px;}}@media all and (max-width:960px){html {font-size: 23px;}}@media all and (max-width:920px){html {font-size: 22px;}}@media all and (max-width:880px){html {font-size: 21px;}}@media all and (max-width:840px){html {font-size: 20px;}}@media all and (max-width:800px){html {font-size: 19px;}}@media all and (max-width:760px){html {font-size: 18px;}}@media all and (max-width:720px){html {font-size: 17px;}}@media all and (max-width:680px){html {font-size: 16px;}}@media all and (max-width:640px){html {font-size: 15px;}}@media all and (max-width:600px){html {font-size: 14px;}}@media all and (max-width:560px){html {font-size: 13px;}}@media all and (max-width:520px){html {font-size: 12px;}}
+}
+
+
+
+@media all and (max-width:600px) {
+    a {font-size: 90%}
+}
+
+.whatever{
+color:lightblue;
+white-space:pre-wrap;
+}
+
+
+form {
+display:inline;
+}
+
+#content {
+background-color:white;
+color:#000;
+font-size:24px;
+white-space:pre-wrap;
+width: 100%;
+min-height: 400px;
+margin-top: 60px;
+/*
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+*/
+
+}
+
+#answerBox{
+position:absolute;
+bottom: 55px;
+width: 100%;
+
+color:#222;
+text-align: center;
+border: 1px solid #ddd;
+font-size: 26px;
+padding: 4px;
+background-color: #eee;
+}
+
+#status{
+}
+#post{
+color:#000;
+font-size:26px;
+border: 1px solid black;
+background-color:white;
+margin-bottom: -5px;
+padding: 5px;
+
+}
+
+
+.words{
+color:blue;
+}
+
+
+
+
+#localStrength, #totalPoints, #originalGrade{
+
+	font-size: 10px;
+	border: 1px solid black;
+	padding: 5px;
+	text-align:center;
+	display:inline;
+}
+
+
+
+.memry{
+background-color:#222;
+height: 123px;
+float:left;
+border:1px solid white;
+text-align: left;
+padding: 1px 0px 1px 5px;
+border-bottom: 2px solid black;
+width:100%;
+color:#D4EEFF;
+}
+
+#postBody{
+color:black;
+margin-top:-96px;
+float:left;
+padding: 10px 10px 10px 10px;
+margin 0px;
+
+height: 75px;
+background-color:lightyellow;
+border:1px solid black;
+text-align: left;
+font-size: 12px;
+width: 100%;
+}
+
+
+
+
+#welcome h1{
+	border:1px solid black;
+	text-align: center;
+	background-color: lightyellow;
+}
+
+#welcome {
+
+	margin-bottom: 40px;
+
+}
+
+#postContent{
+	font-size: 6px;
+	color: lightyellow;
+
+}
+
+
+
+#hidden {
+	visibility:hidden;
+}
+
+
+/*
+body { font-size: 100% }
+h1 {font-size: 200% }
+
+@media all and (max-width:600px) {
+	body {font-size: 70%}
+}
+*/

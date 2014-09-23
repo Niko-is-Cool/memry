@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> <!--DOPE-->
+
+<!--link(rel='stylesheet', type='text/css', href='/stylesheets/itinerated.css')-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/styling.css">
+
+</head>
+
+
+<body id = "profile_page">
+
+
+{% if username %}
+
+<div id="menu">
+	<a href="/" id="home">Public</a> 
+
+	<span id="title">{{username}}</span>
+	<a href="/profile" id="profile">Profile</a> 
+</div>
+
+
+
+
+
+	<!-- HTML for SEARCH BAR -->
+	<div id="tfheader">
+		<form id="tfnewsearch" method="get"  action="/find" > 
+		        <input type="text"  value="{{search}}" class="tftextinput" name="yo" size="21" maxlength="120"><input type="submit" value="Search" class="tfbutton">
+		</form>
+	<div class="tfclear"></div>
+	</div>
+
+
+	<a href="/profile" id="new">New</a>
+	<a href="/profileTop" id="top">Top %</a>
+
+
+
+<div id="memories">
+	{% for post in myposts %}
+	<!--<a class="memry" href="/post/{{post['permalink']}}">-->
+	<a class="memry" href="/post/{{post['permalink']}}/{{post['class_number']}}">
+		<span class="title">{{post['title']}}</span>
+		<!--<div id="postTime"> Posted {{post['date']}} <i>Bye {{post['author']}} and {{post['answers']}}</i></div> --><!--Comments:<a href="/post/{{post['permalink']}}">{{post['comments']|length}}</a>-->
+
+		<span class="grades">{{post['grade']}}%</span>
+		
+
+	</a>
+
+	<div id ="sideButtons">
+		<a class="studentsLink" href="/profile/students/{{post['title']}}">students</a>
+		<a class="editLink" href="/profile/edit/{{post['title']}}">course</a>
+	</div>
+
+	<a id="postBody" href="/post/{{post['permalink']}}">
+
+	{% autoescape false %}
+	{{post['letters']}} 
+	{% endautoescape %}
+	{{post['tags']}}
+	</a>
+
+	{% for tag in post.tags %}
+	    {% if loop.first %}
+		<a href="/tag/{{tag}}">{{tag}}</a>
+	    {% else %}
+		, <a href="/tag/{{tag}}">{{tag}}</a>
+	    {% endif %}
+
+	{% endfor %}
+
+
+	{% endfor %}
+</div>
+
+
+<div id="footMenu">
+	<a href="/logout" id="logout">Logout</a>
+	<a href="/newpost" id ="newPost" >Add Memry</a>
+</div>
+
+<div id="hidden">
+	<div id="imagePath">{{post.image_path}}</div>
+	<div id="postTitle">{{post.title}}</div>
+	<div id="author">{{post.author}}</div>
+	<div id="student">{{post.student}}</div>
+	<div id="username">{{username}}</div>
+	<div id="words">{{post.words}}</div>
+	<div id="original">{{post['body']}}</div>
+	<div id="current">{{post.current}}</div>
+	<div id="created">{{post.created}}</div>
+	<div id="date">{{post.date}}</div>
+	<div id="imageStrength">{{post.image_strength}}</div>
+	<div id="answered">{{post.answered}}</div>
+	<div id="reminded">{{post.reminded}}</div>
+	<div id="copy">{{post.copy}}</div> 
+
+</div>
+
+{% else %}
+	<div id= "notLoggedIn_page">
+		<h2>You are not logged in!</h2>   
+		<br> 
+		<br> 
+		<br> 
+		<a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+	</div>
+
+
+{% endif %}
+
+
+
+</body>
+
+<script src = "../../js/jquery-1.10.2.min.js"></script>
+<script src = "../../js/script.js"></script>
+</html>
+
+
+

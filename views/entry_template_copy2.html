@@ -1,0 +1,168 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Blog Post</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylish.css">
+</head>
+<body>
+
+
+
+
+{% if username %} 
+	<div id="topMenu">
+		<a id ="home" href="/">Memry</a>
+		<a id="profile" href="/profile">Your profile</a><!-- {{username}}</a>--><!-- <a href="/logout">Logout</a> | <a href="/newpost">New Post</a> -->
+		<div id="score">{{score}}</div>	
+		<div id="progressBar">
+			<div></div>
+		</div>
+		<div id="localScore">
+			<span id="originalPercent">%</span>
+			<span id ="title" contenteditable ="true">{{post['title']}}</span>
+			<span id="localStrength">points</span>
+		</div>
+	</div>
+{% else %}
+You are not logged in!        
+	<a href="/login">Login</a> | <a href="/signup">Sign Up</a>
+
+{% endif %}
+{% autoescape false %}
+
+
+
+{% if post['words'].length > 0 %}
+	<div id="content">{{post['content']}}</div>
+	<div id="answerBox" spellcheck="true" contenteditable ="true"></div>
+
+{% else %}
+	<canvas id="canvas">
+		<img id="imageContent" src="{{post.image_path}}"></img>
+	</canvas>
+{% endif %}
+
+
+{% endautoescape %}
+
+
+<!-- So basically what should happen is that 
+1. If the user is the author Remind and Forget are options.  
+2. If the user is logged in, but its not theirs than Follow and Memorize Text or Image are options  
+3. If the uset is not logged in Login or Signup are shown 
+-->
+
+
+	<div id="navMenu">
+		<a id="left" href="/post/previous/{{post['permalink']}}"><--</a>
+		<a id="right" href="/post/next/{{post['permalink']}}">---></a>
+	</div>
+
+
+
+	<div id="bottomMenu">
+		<a id="left" href="/post/previous/{{post['permalink']}}"><--</a>
+
+		<a id="forgetThis" href="/post/forget/{{post['permalink']|url_encode}}/{{post['title']|url_encode}}">Forget</a>
+		<a id="blackBox" href="/post/follow/{{post['title']|url_encode}}">Follow</a>
+		<a id="remindMe">Remind Me</a>
+
+		<a id="right" href="/post/next/{{post['permalink']}}">---></a>
+
+
+{% if post['words'].length > 0 %}
+		<a id="rememberThis" href="/post/rememberText/{{post.permalink|url_encode}}">Memorize</a> 
+
+{% else %}
+		<a id="rememberThis" href="/post/rememberImage/{{post.permalink|url_encode}}">Memorize</a> 
+
+{% endif %}	
+
+	</div>
+
+
+<div id="hidden">
+	<div id="imagePath">{{post.image_path}}</div>
+	<div id="postTitle">{{post.title}}</div>
+	<div id="author">{{post.author}}</div>
+	<div id="follower">{{post.student}}</div>
+	<div id="username">{{username}}</div>
+	<div id="words">{{post.words}}</div>
+	<div id="original">{{post['body']}}</div>
+	<div id="current">{{post.current}}</div>
+	<div id="created">{{post.created}}</div>
+	<div id="date">{{post.date}}</div>
+	<div id="imageStrength">{{post.image_strength}}</div>
+	<div id="answered">{{post.answered}}</div>
+	<div id="reminded">{{post.reminded}}</div>
+
+
+</div>
+
+
+</body>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script src = "../js/jquery-1.10.2.min.js"></script>
+<script src = "../js/script.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div id ="letters">{{post.letters}}</div> eeded a space. don't know y. $(#)=undefined -->
+
+
+<!--
+
+Comments:
+<ul>
+{% for comment in post.comments %}
+Author: {{comment['author']}}<br>
+{{comment['body']}}<br>
+<hr>
+{% endfor %}
+<h3>Add a comment</h3>
+<form action="/newcomment" method="POST">
+<input type="hidden" name="permalink", value="{{post['permalink']}}">
+<h4>{{errors}}</h4>
+<b>Name</b> (required)<br>
+<input type="text" name="commentName" size="60" value="{{comment['name']}}"><br>
+<b>Email</b> (optional)<br>
+<input type="text" name="commentEmail" size="60" value="{{comment['email']}}"><br>
+<b>Comment</b><br>
+<textarea name="commentBody" cols="60" rows="10">{{comment['body']}}</textarea><br>
+<input type="submit" value="Submit">
+</ul>
+
+
+
+	<p id = "tags">
+	<em>tags</em>:
+{% for tag in post.tags %}
+{% if loop.first %}
+        <a href="/tag/{{tag}}">{{tag}}</a>
+{% else %}
+       ,<a href="/tag/{{tag}}">{{tag}}</a>
+{% endif %}
+{% endfor %}
+	</p>
+
+
+-->
+

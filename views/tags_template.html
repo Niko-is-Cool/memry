@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="tags_page">Tags</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+</head>
+
+
+
+<body>
+
+<div id="welcome">
+{% if username %}
+	<a href="/profile"> Profile </a> | <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
+	<h1>{{score}}</h1>        
+{% else %}
+	<h1>You are not logged in!</h1>        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+{% endif %}
+	
+
+</div>
+
+
+TAGS
+
+
+
+
+<div id="tfheader">
+	<form id="tfnewsearch" method="get"  action="/find" > 
+		<input type="text"  value="{{search}}" class="tftextinput" name="yo" size="21" maxlength="120"><input type="submit" value="FIND" class="tfbutton">
+	</form>
+	<div class="tfclear"></div>
+</div>
+
+<div id="displayTags"></div>
+
+<div id="allTags">{{allTags}}</div>
+
+</body>
+
+<script src = "../js/jquery-1.10.2.min.js"></script>
+<script src = "../js/script.js"></script>
+
+</html>
+
+

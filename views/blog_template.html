@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> <!--DOPE-->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/styling.css">
+</head>
+
+
+
+<body id = "home_page">
+
+{% if username %}
+
+
+<div id="menu">
+	
+	<a id ="home" href="/">Public</a>
+	<span id="title">Memry</span>
+	<a href="/profile" id="profile">Profile</a> 
+
+
+</div>
+    
+
+
+<!-- HTML for SEARCH BAR -->
+<div id="tfheader">
+	<form id="tfnewsearch" method="get"  action="/find" > 
+		<input type="text"  value="{{search}}" class="tftextinput" name="yo" size="21" maxlength="120"><input type="submit" value="Find" class="tfbutton">
+	</form>
+	<div class="tfclear"></div>
+</div>
+
+	<a href="/" id="new">New</a>
+	<a href="/top" id="top">Top %</a>
+
+
+
+<div id="memories">
+	{% for post in myposts %}
+	<a class="memry" href="/post/{{post['permalink']}}/0">
+		<span class="title">{{post['title']}}</span>
+		<!--<div id="postTime"> Posted {{post['date']}} <i>Bye {{post['author']}} and {{post['answers']}}</i></div> --><!--Comments:<a href="/post/{{post['permalink']}}">{{post['comments']|length}}</a>-->
+		<span class="grades">{{post['grade']}}%</span>
+	</a>
+
+	<a id="postBody" href="/post/{{post['permalink']}}">
+	{% autoescape false %}
+	{{post.tags}}
+	{% endautoescape %}
+	<!--
+	{{post['letters']}} 
+	{{post['image_path']}}
+	-->
+	</a>
+
+	<div id="tags">
+		
+		{% for tag in post.tags %}
+		    {% if loop.first %}
+			<a href="/tag/{{tag}}">{{tag}}</a>
+		    {% else %}
+			, <a href="/tag/{{tag}}">{{tag}}</a>
+		    {% endif %}
+
+		{% endfor %}
+	</div>
+
+
+
+	{% endfor %}
+</div>
+
+
+
+<div id="footMenu">
+	<a href="/logout" id="logout">Logout</a>
+	<a href="/newpost" id ="newPost" >Add Memry</a>
+</div>
+
+{% else %}
+
+	<div id= "notLoggedIn_page">
+		<h2>You are not logged in!</h2>    
+		<br> 
+		<br> 
+		<br> 
+		<a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+	</div>
+
+{% endif %}
+
+
+</body>
+
+<script src = "../js/jquery-1.10.2.min.js"></script>
+<script src = "../js/script.js"></script>
+
+</html>
+
+
