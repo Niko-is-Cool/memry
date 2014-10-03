@@ -542,6 +542,12 @@ function ContentHandler (db) {
 		var permalink = title.replace( /\s/g, '_' );
 		//permalink = permalink.replace( /\W/g, '' )+'_'+Math.floor(Math.random() * 100)*Date.now();
 
+
+
+
+
+
+
 		///IMAGES//////////////////////")
 		var fs = require('fs');///We need the fs module for moving the uploaded files.")
 
@@ -571,6 +577,9 @@ function ContentHandler (db) {
 					   // res.send('File uploaded to: ' + target_path + ' - ' + req.files.image[i].size + ' bytes');
 					});
 				});
+
+
+
 
 				var gm = require('gm').subClass({ imageMagick: true });	
 				gm(target_path).size(function (err, size) {//shrinks and replaces large images
