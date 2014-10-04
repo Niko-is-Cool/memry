@@ -1,0 +1,1 @@
+{ "options" : { "create" : "global" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "blog.global", "name" : "_id_" } ] }
